@@ -37,34 +37,37 @@ public class PSA {
         LinkedList<PSAPCB> PSAPCBS=new LinkedList<>();
         LinkedList<PSAPCB> block =new LinkedList<>();
         LinkedList<String> strings=new LinkedList<>();
-        PSAPCBS.add(new PSAPCB(1,"a",0,3,100,2,3));
-        PSAPCBS.add(new PSAPCB(2,"b",2,6,100,1,4));
-        PSAPCBS.add(new PSAPCB(3,"c",4,4,100,3,2));
-        PSAPCBS.add(new PSAPCB(4,"d",6,5,100,4,5));
-        PSAPCBS.add(new PSAPCB(5,"e",8,2,100,0,0));
-//        while (true) {
-//            System.out.println("请依次输入进程ID，进程名，到达时间，服务时间，优先权，运行n时间后进入堵塞队列的时间，堵塞时间：");
-//            try {
-//                int id = input.nextInt();
-//                String pname = input.next();
-//                int dadatime = input.nextInt();
-//                int fuwutime = input.nextInt();
-//                int priority = input.nextInt();
-//                int startblock=input.nextInt();
-//                int blocktime=input.nextInt();
-//                PSAPCBS.add(new PSAPCB(id,pname, dadatime, fuwutime, priority,startblock,blocktime));
-//                System.out.println("是否继续？（1继续，0结束）");
-//                int i = input.nextInt();
-//                if (i == 0) {
-//                    PSAPCBS.sort((o1,o2)->(o1.daodatime-o2.daodatime));
-//                    break;
-//                }
-//            }
-//            catch (Exception e){
-//                System.out.println("输入有误！程序非正常运行！请程序运行程序");
-//                break;
-//            }
-//        }
+
+        // PSAPCBS.add(new PSAPCB(1,"a",0,3,100,2,3));
+        // PSAPCBS.add(new PSAPCB(2,"b",2,6,100,1,4));
+        // PSAPCBS.add(new PSAPCB(3,"c",4,4,100,3,2));
+        // PSAPCBS.add(new PSAPCB(4,"d",6,5,100,4,5));
+        // PSAPCBS.add(new PSAPCB(5,"e",8,2,100,0,0));
+       //测试进程
+       while (true) {
+           System.out.println("请依次输入进程ID，进程名，到达时间，服务时间，优先权，运行n时间后进入堵塞队列的时间，堵塞时间：");
+           try {
+               int id = input.nextInt();
+               String pname = input.next();
+               int dadatime = input.nextInt();
+               int fuwutime = input.nextInt();
+               int priority = input.nextInt();
+               int startblock=input.nextInt();
+               int blocktime=input.nextInt();
+               PSAPCBS.add(new PSAPCB(id,pname, dadatime, fuwutime, priority,startblock,blocktime));
+               System.out.println("是否继续？（1继续，0结束）");
+               int i = input.nextInt();
+               if (i == 0) {
+                   PSAPCBS.sort((o1,o2)->(o1.daodatime-o2.daodatime));
+                   break;
+               }
+           }
+           catch (Exception e){
+               System.out.println("输入有误！程序非正常运行！请程序运行程序");
+               break;
+           }
+       }
+       //可以选择手动输入进程
         System.out.println("*******************************************进程运行初信息************************************************");
         System.out.println("*\t\t进程ID\t进程名\t\t到达时间\t\t优先权\t\t服务时间\t\tnS进行后堵塞\t\t堵塞时间\t*");
         for(int i=0;i<PSAPCBS.size();i++){
